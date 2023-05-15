@@ -18,4 +18,9 @@
         <ProjectReference Include="..\IKVM.Compiler\IKVM.Compiler.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Managed\" />
+      <Folder Include="Managed\Reflection\" />
+    </ItemGroup>
+
 </Project>

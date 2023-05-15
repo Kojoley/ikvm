@@ -50,6 +50,35 @@ namespace IKVM.Compiler
         /// </summary>
         public virtual AccessFlag AccessFlag => 0;
 
+
+
+        internal bool IsInternal => (AccessFlag & AccessFlag.InternalAccess) != 0;
+
+        internal bool IsPublic
+        {
+            get
+            {
+                return (modifiers & Modifiers.Public) != 0;
+            }
+        }
+
+        internal bool IsAbstract
+        {
+            get
+            {
+                // interfaces don't need to marked abstract explicitly (and javac 1.1 didn't do it)
+                return (modifiers & (Modifiers.Abstract | Modifiers.Interface)) != 0;
+            }
+        }
+
+        internal bool IsFinal
+        {
+            get
+            {
+                return (modifiers & Modifiers.Final) != 0;
+            }
+        }
+
     }
 
 }
