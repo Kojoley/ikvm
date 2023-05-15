@@ -27,10 +27,14 @@ namespace IKVM.ByteCode.Syntax
         /// </summary>
         /// <param name="buffer"></param>
         /// <returns></returns>
-        public static JavaClassName Parse(ReadOnlyMemory<char> buffer)
-        {
-            return new JavaClassName(buffer);
-        }
+        public static JavaClassName Parse(ReadOnlyMemory<char> buffer) => new JavaClassName(buffer);
+
+        /// <summary>
+        /// Parses the given binary name buffer.
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <returns></returns>
+        public static JavaClassName ParseBinaryName(ReadOnlyMemory<char> buffer) => Parse(buffer.ToString().Replace('/', '.').AsMemory());
 
         readonly ReadOnlyMemory<char> value;
 

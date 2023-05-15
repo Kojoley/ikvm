@@ -15,7 +15,7 @@ namespace IKVM.Compiler
         /// </summary>
         /// <param name="className"></param>
         /// <returns></returns>
-        protected override JavaClassHandle ResolveCore(JavaClassName className) => new ByteCodeJavaClassHandle(Resolve(className));
+        protected override JavaClassHandle ResolveCore(JavaClassName className) => new ByteCodeJavaClassHandle(this, Resolve(className));
 
         /// <summary>
         /// Override to implement resolution of class readers.

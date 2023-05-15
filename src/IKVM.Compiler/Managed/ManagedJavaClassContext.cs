@@ -1,6 +1,6 @@
 ﻿using IKVM.ByteCode.Syntax;
 
-namespace IKVM.Compiler
+namespace IKVM.Compiler.Managed
 {
 
     /// <summary>
@@ -14,14 +14,14 @@ namespace IKVM.Compiler
         /// </summary>
         /// <param name="className"></param>
         /// <returns></returns>
-        protected override JavaClassHandle ResolveCore(JavaClassName className) => new ManagedJavaClassHandle(Resolve(className));
+        protected override JavaClassHandle ResolveCore(JavaClassName className) => new ManagedJavaClassHandle(this,Resolve(className));
 
         /// <summary>
         /// Override to implement resolution of types.
         /// </summary>
         /// <param name="className"></param>
         /// <returns></returns>
-        protected abstract new ManagedTypeInfo Resolve(JavaClassName className);
+        protected abstract new IManagedTypeInfo Resolve(JavaClassName className);
 
     }
 

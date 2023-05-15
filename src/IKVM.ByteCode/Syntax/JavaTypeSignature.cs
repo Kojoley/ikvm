@@ -76,12 +76,12 @@ namespace IKVM.ByteCode.Syntax
         /// <summary>
         /// Gets the base type of the type signature, or null if the signature represents an object or void.
         /// </summary>
-        public JavaBaseTypeName? BaseTypeName => GetBaseTypeName();
+        public JavaPrimitiveTypeName? BaseTypeName => GetBaseTypeName();
 
-        JavaBaseTypeName? GetBaseTypeName()
+        JavaPrimitiveTypeName? GetBaseTypeName()
         {
             var r = GetArrayRank();
-            return memory.Span[r] != ObjectTypeSpec ? (JavaBaseTypeName)memory.Span[r] : null;
+            return memory.Span[r] != ObjectTypeSpec ? (JavaPrimitiveTypeName)memory.Span[r] : null;
         }
 
         /// <summary>

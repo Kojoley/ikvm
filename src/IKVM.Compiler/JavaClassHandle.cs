@@ -36,7 +36,22 @@ namespace IKVM.Compiler
         /// <summary>
         /// Gets the Java class name.
         /// </summary>
-        public abstract JavaClassName ClassName { get; }
+        public abstract JavaTypeSignature? Signature { get; }
+
+        /// <summary>
+        /// Returns <c>true</c> if this Java class represents an array.
+        /// </summary>
+        public bool IsArray => Signature != null && Signature.Value.IsArray;
+
+        /// <summary>
+        /// Gets the rank of the class if it is an array.
+        /// </summary>
+        public int ArrayRank => Signature != null ? Signature.Value.ArrayRank ?? 0;
+
+        /// <summary>
+        /// A ghost is an interface that appears to be implemented by a .NET type.
+        /// </summary>
+        public virtual bool IsGhost => false;
 
     }
 

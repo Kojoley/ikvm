@@ -4,11 +4,13 @@
         <LangVersion>11</LangVersion>
         <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     </PropertyGroup>
+    
     <ItemGroup>
-      <PackageReference Include="System.Reflection.Metadata" Version="7.0.1" />
+        <PackageReference Include="System.Reflection.Metadata" Version="6.0.1" />
     </ItemGroup>
+    
     <ItemGroup>
-      <ProjectReference Include="..\IKVM.ByteCode\IKVM.ByteCode.csproj" />
+        <ProjectReference Include="..\IKVM.ByteCode\IKVM.ByteCode.csproj" />
     </ItemGroup>
 
 </Project>

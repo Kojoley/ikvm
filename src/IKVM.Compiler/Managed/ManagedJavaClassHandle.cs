@@ -1,34 +1,33 @@
 ﻿using System;
-
 using IKVM.ByteCode.Syntax;
 
-namespace IKVM.Compiler
+namespace IKVM.Compiler.Managed
 {
 
     /// <summary>
-    /// Provides a handle to a Java class described by a <see cref="ManagedTypeInfo"/>.
+    /// Provides a handle to a Java class described by a <see cref="IManagedTypeInfo"/>.
     /// </summary>
     sealed class ManagedJavaClassHandle : JavaClassHandle
     {
 
-        readonly ManagedTypeInfo type;
+        readonly IManagedTypeInfo info;
 
         /// <summary>
         /// Initializes a new instance.
         /// </summary>
         /// <param name="context"></param>
-        /// <param name="type"></param>
+        /// <param name="info"></param>
         /// <exception cref="ArgumentNullException"></exception>
-        public ManagedJavaClassHandle(ManagedJavaClassContext context, ManagedTypeInfo type) :
+        public ManagedJavaClassHandle(ManagedJavaClassContext context, IManagedTypeInfo info) :
             base(context)
         {
-            this.type = type ?? throw new ArgumentNullException(nameof(type));
+            this.info = info ?? throw new ArgumentNullException(nameof(info));
         }
 
         /// <summary>
         /// Gets the Java class name that correlates to the specified managed type.
         /// </summary>
-        public override JavaClassName ClassName => "cli." + type.Name;
+        public override JavaClassName Signature => ManagedTypeUtil.GetName(info);
 
     }
 

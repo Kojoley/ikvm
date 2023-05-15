@@ -1,7 +1,7 @@
 ﻿namespace IKVM.ByteCode.Syntax
 {
 
-    public enum JavaBaseTypeName : short
+    public enum JavaPrimitiveTypeName : short
     {
 
         Boolean = (short)'Z',

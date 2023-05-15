@@ -9,22 +9,22 @@ namespace IKVM.Compiler
     class PrimitiveJavaTypeHandle : JavaTypeHandle
     {
 
-        public static PrimitiveJavaTypeHandle Boolean = new PrimitiveJavaTypeHandle(JavaBaseTypeName.Boolean);
-        public static PrimitiveJavaTypeHandle Byte = new PrimitiveJavaTypeHandle(JavaBaseTypeName.Byte);
-        public static PrimitiveJavaTypeHandle Char = new PrimitiveJavaTypeHandle(JavaBaseTypeName.Char);
-        public static PrimitiveJavaTypeHandle Short = new PrimitiveJavaTypeHandle(JavaBaseTypeName.Short);
-        public static PrimitiveJavaTypeHandle Int = new PrimitiveJavaTypeHandle(JavaBaseTypeName.Int);
-        public static PrimitiveJavaTypeHandle Long = new PrimitiveJavaTypeHandle(JavaBaseTypeName.Long);
-        public static PrimitiveJavaTypeHandle Float = new PrimitiveJavaTypeHandle(JavaBaseTypeName.Float);
-        public static PrimitiveJavaTypeHandle Double = new PrimitiveJavaTypeHandle(JavaBaseTypeName.Double);
+        public static PrimitiveJavaTypeHandle Boolean = new PrimitiveJavaTypeHandle(JavaPrimitiveTypeName.Boolean);
+        public static PrimitiveJavaTypeHandle Byte = new PrimitiveJavaTypeHandle(JavaPrimitiveTypeName.Byte);
+        public static PrimitiveJavaTypeHandle Char = new PrimitiveJavaTypeHandle(JavaPrimitiveTypeName.Char);
+        public static PrimitiveJavaTypeHandle Short = new PrimitiveJavaTypeHandle(JavaPrimitiveTypeName.Short);
+        public static PrimitiveJavaTypeHandle Int = new PrimitiveJavaTypeHandle(JavaPrimitiveTypeName.Int);
+        public static PrimitiveJavaTypeHandle Long = new PrimitiveJavaTypeHandle(JavaPrimitiveTypeName.Long);
+        public static PrimitiveJavaTypeHandle Float = new PrimitiveJavaTypeHandle(JavaPrimitiveTypeName.Float);
+        public static PrimitiveJavaTypeHandle Double = new PrimitiveJavaTypeHandle(JavaPrimitiveTypeName.Double);
 
-        readonly JavaBaseTypeName typeName;
+        readonly JavaPrimitiveTypeName typeName;
 
         /// <summary>
         /// Initializes a new instance.
         /// </summary>
         /// <param name="typeName"></param>
-        PrimitiveJavaTypeHandle(JavaBaseTypeName typeName)
+        PrimitiveJavaTypeHandle(JavaPrimitiveTypeName typeName)
         {
             this.typeName = typeName;
         }

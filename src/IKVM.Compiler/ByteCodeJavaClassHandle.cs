@@ -1,6 +1,7 @@
 ﻿using System;
 
 using IKVM.ByteCode.Reading;
+using IKVM.ByteCode.Syntax;
 
 namespace IKVM.Compiler
 {
@@ -24,6 +25,11 @@ namespace IKVM.Compiler
         {
             this.reader = reader ?? throw new ArgumentNullException(nameof(reader));
         }
+
+        /// <summary>
+        /// Gets the name of the Java class.
+        /// </summary>
+        public override JavaClassName Signature => JavaClassName.ParseBinaryName(reader.This.Name.Value.AsMemory());
 
     }
 
